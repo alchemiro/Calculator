@@ -16,28 +16,13 @@ namespace Calculator
         public Form1()
         {
             InitializeComponent();
-            global = Factor1TextBox;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
+            global = Factor1TextBox;//start global in factor 1
         }
 
         private void operatorClicked(object sender, EventArgs e)
         {
             OperatorTextBox.Text = ((Button)sender).Text;
-            global = Factor2TextBox;
+            global = Factor2TextBox; //add correct operator and move to next factor
         }
 
         private void clearClicked(object sender, EventArgs e)
@@ -46,12 +31,12 @@ namespace Calculator
             Factor2TextBox.Clear();
             OperatorTextBox.Clear();
             textResultBox.Clear();
-            global = Factor1TextBox;
+            global = Factor1TextBox;//clear everything and reset global to the first text box
         }
 
         private void getResult(object sender, EventArgs e)
         {
-            switch (OperatorTextBox.Text)
+            switch (OperatorTextBox.Text)//switch case for which operator you chose
             {
                 case "+":
                     textResultBox.Text = (double.Parse(Factor1TextBox.Text) + double.Parse(Factor2TextBox.Text)).ToString();
@@ -76,11 +61,11 @@ namespace Calculator
             }
         }
 
-        private void numpadClick(object sender, EventArgs e)
+        private void numpadClick(object sender, EventArgs e)//every numpad (number) click event adds the text value to the global factor
         {
             global.Text += ((Button)sender).Text;
         }
-        private void numpad_MouseMove(object sender, MouseEventArgs e)
+        private void numpad_MouseMove(object sender, MouseEventArgs e)//troll feature
         {
             Button button = (Button) sender;
             Random random = new Random();
