@@ -67,10 +67,43 @@ namespace Calculator
         }
         private void numpad_MouseMove(object sender, MouseEventArgs e)//troll feature
         {
-            Button button = (Button) sender;
+            Button button = (Button)sender;
             Random random = new Random();
-            int rndX = random.Next(-5,6), rndY = random.Next(-5,6);
-            button.Location = new Point(button.Location.X+rndX, button.Location.Y+rndY);
+            if (trollBox.Checked)
+            {
+                int rndX = random.Next(-5, 6), rndY = random.Next(-5, 6);
+                button.Location = new Point(button.Location.X + rndX, button.Location.Y + rndY);
+            }            
+            
+        }
+
+        private void changeTrollMode(object sender, EventArgs e)
+        {
+            CheckBox check = (CheckBox) sender;
+            if (!check.Checked)
+            {
+                Numpad0.Location = new Point(73, 377);
+                numpadDot.Location = new Point(263, 377);
+                Numpad1.Location = new Point(73, 308);
+                Numpad2.Location = new Point(166, 308);
+                Numpad3.Location = new Point(263, 308);
+                Numpad4.Location = new Point(73, 233);
+                Numpad5.Location = new Point(166, 233);
+                Numpad6.Location = new Point(263, 233);
+                Numpad7.Location = new Point(73, 164);
+                Numpad8.Location = new Point(166, 164);
+                Numpad9.Location = new Point(263, 164);
+
+                NumpadPlus.Location = new Point(430, 164);
+                NumpadMinus.Location = new Point(430, 263);
+                NumpadMultiply.Location = new Point(430, 308);
+                NumpadDivide.Location = new Point(520, 164);
+                clearButton.Location = new Point(610, 164);
+                NumpadRemainder.Location = new Point(520, 233);
+                NumpadEquals.Location = new Point(610, 233);
+                NumpadExponent.Location = new Point(520, 308);
+
+            }
         }
     }
 }

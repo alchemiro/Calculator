@@ -52,6 +52,7 @@
             this.numpadDot = new System.Windows.Forms.Button();
             this.OperatorTextBox = new System.Windows.Forms.TextBox();
             this.clearButton = new System.Windows.Forms.Button();
+            this.trollBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // Factor1TextBox
@@ -85,13 +86,14 @@
             // 
             this.NumpadMinus.FlatAppearance.BorderSize = 0;
             this.NumpadMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumpadMinus.Location = new System.Drawing.Point(430, 235);
+            this.NumpadMinus.Location = new System.Drawing.Point(430, 233);
             this.NumpadMinus.Name = "NumpadMinus";
-            this.NumpadMinus.Size = new System.Drawing.Size(75, 61);
+            this.NumpadMinus.Size = new System.Drawing.Size(75, 63);
             this.NumpadMinus.TabIndex = 5;
             this.NumpadMinus.Text = "-";
             this.NumpadMinus.UseVisualStyleBackColor = true;
             this.NumpadMinus.Click += new System.EventHandler(this.operatorClicked);
+            this.NumpadMinus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // textResultBox
             // 
@@ -112,6 +114,7 @@
             this.Numpad4.Text = "4";
             this.Numpad4.UseVisualStyleBackColor = true;
             this.Numpad4.Click += new System.EventHandler(this.numpadClick);
+            this.Numpad4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // Numpad5
             // 
@@ -124,6 +127,7 @@
             this.Numpad5.Text = "5";
             this.Numpad5.UseVisualStyleBackColor = true;
             this.Numpad5.Click += new System.EventHandler(this.numpadClick);
+            this.Numpad5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // Numpad6
             // 
@@ -136,6 +140,7 @@
             this.Numpad6.Text = "6";
             this.Numpad6.UseVisualStyleBackColor = true;
             this.Numpad6.Click += new System.EventHandler(this.numpadClick);
+            this.Numpad6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // Numpad1
             // 
@@ -148,6 +153,7 @@
             this.Numpad1.Text = "1";
             this.Numpad1.UseVisualStyleBackColor = true;
             this.Numpad1.Click += new System.EventHandler(this.numpadClick);
+            this.Numpad1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // Numpad2
             // 
@@ -160,6 +166,7 @@
             this.Numpad2.Text = "2";
             this.Numpad2.UseVisualStyleBackColor = true;
             this.Numpad2.Click += new System.EventHandler(this.numpadClick);
+            this.Numpad2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // Numpad3
             // 
@@ -172,6 +179,7 @@
             this.Numpad3.Text = "3";
             this.Numpad3.UseVisualStyleBackColor = true;
             this.Numpad3.Click += new System.EventHandler(this.numpadClick);
+            this.Numpad3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // Numpad7
             // 
@@ -184,6 +192,7 @@
             this.Numpad7.Text = "7";
             this.Numpad7.UseVisualStyleBackColor = true;
             this.Numpad7.Click += new System.EventHandler(this.numpadClick);
+            this.Numpad7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // Numpad8
             // 
@@ -196,6 +205,7 @@
             this.Numpad8.Text = "8";
             this.Numpad8.UseVisualStyleBackColor = true;
             this.Numpad8.Click += new System.EventHandler(this.numpadClick);
+            this.Numpad8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // Numpad9
             // 
@@ -208,18 +218,20 @@
             this.Numpad9.Text = "9";
             this.Numpad9.UseVisualStyleBackColor = true;
             this.Numpad9.Click += new System.EventHandler(this.numpadClick);
+            this.Numpad9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // NumpadMultiply
             // 
             this.NumpadMultiply.FlatAppearance.BorderSize = 0;
             this.NumpadMultiply.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumpadMultiply.Location = new System.Drawing.Point(430, 310);
+            this.NumpadMultiply.Location = new System.Drawing.Point(430, 308);
             this.NumpadMultiply.Name = "NumpadMultiply";
-            this.NumpadMultiply.Size = new System.Drawing.Size(75, 61);
+            this.NumpadMultiply.Size = new System.Drawing.Size(75, 63);
             this.NumpadMultiply.TabIndex = 5;
             this.NumpadMultiply.Text = "*";
             this.NumpadMultiply.UseVisualStyleBackColor = true;
             this.NumpadMultiply.Click += new System.EventHandler(this.operatorClicked);
+            this.NumpadMultiply.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // NumpadPlus
             // 
@@ -227,11 +239,12 @@
             this.NumpadPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumpadPlus.Location = new System.Drawing.Point(430, 164);
             this.NumpadPlus.Name = "NumpadPlus";
-            this.NumpadPlus.Size = new System.Drawing.Size(75, 61);
+            this.NumpadPlus.Size = new System.Drawing.Size(75, 63);
             this.NumpadPlus.TabIndex = 5;
             this.NumpadPlus.Text = "+";
             this.NumpadPlus.UseVisualStyleBackColor = true;
             this.NumpadPlus.Click += new System.EventHandler(this.operatorClicked);
+            this.NumpadPlus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // NumpadDivide
             // 
@@ -239,47 +252,51 @@
             this.NumpadDivide.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumpadDivide.Location = new System.Drawing.Point(520, 164);
             this.NumpadDivide.Name = "NumpadDivide";
-            this.NumpadDivide.Size = new System.Drawing.Size(75, 61);
+            this.NumpadDivide.Size = new System.Drawing.Size(75, 63);
             this.NumpadDivide.TabIndex = 5;
             this.NumpadDivide.Text = "/";
             this.NumpadDivide.UseVisualStyleBackColor = true;
             this.NumpadDivide.Click += new System.EventHandler(this.operatorClicked);
+            this.NumpadDivide.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // NumpadRemainder
             // 
             this.NumpadRemainder.FlatAppearance.BorderSize = 0;
             this.NumpadRemainder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumpadRemainder.Location = new System.Drawing.Point(520, 235);
+            this.NumpadRemainder.Location = new System.Drawing.Point(520, 233);
             this.NumpadRemainder.Name = "NumpadRemainder";
-            this.NumpadRemainder.Size = new System.Drawing.Size(75, 61);
+            this.NumpadRemainder.Size = new System.Drawing.Size(75, 63);
             this.NumpadRemainder.TabIndex = 5;
             this.NumpadRemainder.Text = "%";
             this.NumpadRemainder.UseVisualStyleBackColor = true;
             this.NumpadRemainder.Click += new System.EventHandler(this.operatorClicked);
+            this.NumpadRemainder.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // NumpadExponent
             // 
             this.NumpadExponent.FlatAppearance.BorderSize = 0;
             this.NumpadExponent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumpadExponent.Location = new System.Drawing.Point(520, 310);
+            this.NumpadExponent.Location = new System.Drawing.Point(520, 308);
             this.NumpadExponent.Name = "NumpadExponent";
-            this.NumpadExponent.Size = new System.Drawing.Size(75, 61);
+            this.NumpadExponent.Size = new System.Drawing.Size(75, 63);
             this.NumpadExponent.TabIndex = 5;
             this.NumpadExponent.Text = "^";
             this.NumpadExponent.UseVisualStyleBackColor = true;
             this.NumpadExponent.Click += new System.EventHandler(this.operatorClicked);
+            this.NumpadExponent.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // NumpadEquals
             // 
             this.NumpadEquals.FlatAppearance.BorderSize = 0;
             this.NumpadEquals.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumpadEquals.Location = new System.Drawing.Point(619, 235);
+            this.NumpadEquals.Location = new System.Drawing.Point(610, 233);
             this.NumpadEquals.Name = "NumpadEquals";
-            this.NumpadEquals.Size = new System.Drawing.Size(75, 61);
+            this.NumpadEquals.Size = new System.Drawing.Size(75, 63);
             this.NumpadEquals.TabIndex = 5;
             this.NumpadEquals.Text = "=";
             this.NumpadEquals.UseVisualStyleBackColor = true;
             this.NumpadEquals.Click += new System.EventHandler(this.getResult);
+            this.NumpadEquals.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // Numpad0
             // 
@@ -293,6 +310,7 @@
             this.Numpad0.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Numpad0.UseVisualStyleBackColor = true;
             this.Numpad0.Click += new System.EventHandler(this.numpadClick);
+            this.Numpad0.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // numpadDot
             // 
@@ -306,6 +324,7 @@
             this.numpadDot.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.numpadDot.UseVisualStyleBackColor = true;
             this.numpadDot.Click += new System.EventHandler(this.numpadClick);
+            this.numpadDot.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
             // 
             // OperatorTextBox
             // 
@@ -319,13 +338,25 @@
             // 
             this.clearButton.FlatAppearance.BorderSize = 0;
             this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearButton.Location = new System.Drawing.Point(619, 164);
+            this.clearButton.Location = new System.Drawing.Point(610, 164);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(75, 61);
+            this.clearButton.Size = new System.Drawing.Size(75, 63);
             this.clearButton.TabIndex = 5;
             this.clearButton.Text = "C";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearClicked);
+            this.clearButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.numpad_MouseMove);
+            // 
+            // trollBox
+            // 
+            this.trollBox.AutoSize = true;
+            this.trollBox.Location = new System.Drawing.Point(610, 333);
+            this.trollBox.Name = "trollBox";
+            this.trollBox.Size = new System.Drawing.Size(113, 29);
+            this.trollBox.TabIndex = 8;
+            this.trollBox.Text = "Trolling?";
+            this.trollBox.UseVisualStyleBackColor = true;
+            this.trollBox.CheckedChanged += new System.EventHandler(this.changeTrollMode);
             // 
             // Form1
             // 
@@ -333,6 +364,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.trollBox);
             this.Controls.Add(this.numpadDot);
             this.Controls.Add(this.Numpad0);
             this.Controls.Add(this.textResultBox);
@@ -390,6 +422,7 @@
         private System.Windows.Forms.Button numpadDot;
         private System.Windows.Forms.TextBox OperatorTextBox;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.CheckBox trollBox;
     }
 }
 
