@@ -21,17 +21,17 @@ namespace Calculator
 
         private void operatorClicked(object sender, EventArgs e)
         {
-            OperatorTextBox.Text = ((Button)sender).Text;
+            OperatorTextBox.Text = ((Button)sender).Text; //cast sender as button so we can change the text
             global = Factor2TextBox; //add correct operator and move to next factor
         }
 
         private void clearClicked(object sender, EventArgs e)
         {
-            Factor1TextBox.Clear();
-            Factor2TextBox.Clear();
-            OperatorTextBox.Clear();
-            textResultBox.Clear();
-            global = Factor1TextBox;//clear everything and reset global to the first text box
+            Factor1TextBox.Clear();//clear factor 1 of all text
+            Factor2TextBox.Clear(); //clear factor 2 of all text
+            OperatorTextBox.Clear(); //remove the operator
+            textResultBox.Clear(); //clear any leftover result
+            global = Factor1TextBox;//reset global to the first text box
         }
 
         private void getResult(object sender, EventArgs e)
@@ -63,14 +63,14 @@ namespace Calculator
 
         private void numpadClick(object sender, EventArgs e)//every numpad (number) click event adds the text value to the global factor
         {
-            global.Text += ((Button)sender).Text;
+            global.Text += ((Button)sender).Text;//cast sender as button to interact
         }
         private void numpad_MouseMove(object sender, MouseEventArgs e)//troll feature
         {
-            Button button = (Button) sender;
+            Button button = (Button) sender;//cast button
             Random random = new Random();
-            int rndX = random.Next(-5,6), rndY = random.Next(-5,6);
-            button.Location = new Point(button.Location.X+rndX, button.Location.Y+rndY);
+            int rndX = random.Next(-5,6), rndY = random.Next(-5,6);//generate 2 random numbers
+            button.Location = new Point(button.Location.X+rndX, button.Location.Y+rndY);//change location accordingly
         }
     }
 }
